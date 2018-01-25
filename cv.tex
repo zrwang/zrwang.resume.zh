@@ -1,0 +1,344 @@
+% Jason R. Blevins - Curriculum Vitae
+%
+% Copyright (C) 2004-2015 Jason R. Blevins <jrblevin@sdf.org>
+% http://jblevins.org/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely.  No attribution is
+% required in any resulting documents.  I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+% Fonts
+\usepackage{luatexja-fontspec}
+\setmainfont{Times New Roman}
+\setmainjfont{FandolSong}
+
+\renewcommand\emph[1]{%
+  {#1}
+}
+
+% New environment for itemize with multicolumn
+\makeatletter
+\newenvironment{dateitemize}%
+{\ifnum \@itemdepth >\thr@@\@toodeep\else
+\advance\@itemdepth\@ne
+\edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+\expandafter
+\list
+\csname\@itemitem\endcsname
+{\advance\rightmargin3cm
+\def\makelabel##1{\hss\llap{\textbullet}\rlap{\hbox to \dimexpr\linewidth+\rightmargin+\itemsep\relax{\hss##1}}}}%
+\fi}
+{\endlist}%
+\makeatother
+
+% Set your name here
+\def\name{王泽睿}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+colorlinks = true,
+urlcolor = black,
+pdfauthor = {\name},
+pdfkeywords = {Ph.D. student, The Chinese University of Hong Kong, robotic surgery, soft tissue manipulation,
+dissection, suturing},
+pdftitle = {\name: Curriculum Vitae},
+pdfsubject = {Curriculum Vitae},
+pdfpagemode = UseNone
+}
+
+\geometry{
+body={6.5in, 9.0in},
+left=1.0in,
+top=1.0in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets and compact spacing
+\renewenvironment{itemize}{
+\begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+    \setlength{\itemsep}{0.25em}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.25em}
+    }
+    }{
+\end{list}
+}
+\setlist[enumerate]{itemsep=0.25em}
+
+\begin{document}
+
+% Place name at left
+{\huge \name}
+
+% Alternatively, print name centered and bold:
+%\centerline{\huge \bf \name}
+
+\bigskip
+
+\begin{minipage}[t]{0.595\textwidth}
+    香港中文大学天石机器人研究所 \\
+    机械与自动化工程学系 \\
+    1/F, 教研楼一座, 香港中文大学, 沙田, 新界, 香港
+\end{minipage}
+\begin{minipage}[t]{0.395\textwidth}
+    电话: (852) 3943-3541 \\
+    Email: \href{mailto:zerui.j.wang@gmail.com}{zerui.j.wang@gmail.com} \\
+    个人主页: \href{http://www.wangzerui.com/}{www.wangzerui.com}
+\end{minipage}
+
+\section*{工作经历}
+
+\begin{itemize}
+    \item 博士后研究员, 天石机器人研究所, 机械与自动化工程学系, 香港中文大学, 2017年九月 - 今.
+    \begin{itemize}
+        \item \emph{研究方向:}
+        \begin{itemize}
+            \item 视觉伺服在医疗机器人中的应用;
+            \item 基于视觉的柔性体操作;
+            \item 医疗机器人的设计.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{教育背景}
+
+\begin{itemize}
+    \item 哲学博士. 机械与自动化工程, 香港中文大学, 2013-2017
+    \begin{itemize}
+        \item \emph{整体 GPA:} 3.97/4
+        \item \emph{研究方向:}
+        \begin{itemize}
+            \item 机器人辅助手术中安全机构的设计;
+            \item 视觉伺服在医疗机器人中的应用.
+        \end{itemize}
+    \end{itemize}
+    \item 访问学生, 计算机科学, 约翰霍普金斯大学, 2016-2017
+    \begin{itemize}
+        \item \emph{研究方向:}
+        \begin{itemize}
+            \item 参与开源库 dvrk-ros 和 cisst-saw 的开发与改进;
+            \item 基于视觉的轨迹跟踪控制;
+            \item 基于视觉的具有远端不动点结构机械臂的标定;
+            \item 限制条件下的柔性体操作算法.
+        \end{itemize}
+    \end{itemize}
+    \item 暑期交流, 2012
+    \begin{itemize}
+        \item 代尔夫特理工，巴黎十一大，法国中央理工，法国航空航天大学，布鲁塞尔自由大学;
+        \item 作为北航优秀学生代表访问欧洲理工科名校 (前 0.75\%).
+    \end{itemize}
+    \item 工学学士, 质量与可靠性工程, 北京航空航天大学, 2009-2013
+    \begin{itemize}
+        \item \emph{整体 GPA:} 3.84/4 (90.04/100), 专业排名第一
+    \end{itemize}
+    \item 乌鲁木齐市第一中学, 2006-2009
+    \begin{itemize}
+        \item 高考排名前 0.18\%;
+        \item 信息技术学竞赛一等奖;
+        \item 物理竞赛二等奖.
+    \end{itemize}
+\end{itemize}
+
+\section*{获奖情况}
+
+\begin{dateitemize}
+    \item[Jul. 2017] Best Innovation Prize in Surgical Robot Challenge of Hamlyn Symposium
+    \item[Oct. 2015] Overseas Research Attachment Programme Scholarship
+    \item[Jun. 2015] Reaching Out Award (政府奖学金)
+    \item[Aug. 2013] Hong Kong PhD Fellowship (政府奖学金)
+    \item[Nov. 2012] 中国机器人杯公开挑战赛创新水下机器人设计冠军
+    \item[Jul. 2012] 中国大学生机械创新设计二等奖
+    \item[Dec. 2010] 中国大学生物理竞赛二等奖
+    \item[Nov. 2010] 国家奖学金 (2.6\%)
+    \item[Nov. 2011] 北京市优秀学生 (1.1\%)
+    \item[Nov. 2011] 北京航空航天大学优秀学生 (3\%)
+    \item[Mar. 2012] 北京航空航天大学杨为民特等奖学金 (0.8\%)
+    \item[Dec. 2011] 北京航空航天大学学科竞赛二等奖 (3\%)
+    \item[2010-2012] 北京航空航天大学科学与工程创新一等奖 (7\%)
+    \item[2010-2012] 北京航空航天大学学习优秀一等奖 (3\%)
+
+\end{dateitemize}
+
+%\newpage
+% \section*{Projects}
+
+% \subsection*{Postgraduate}
+% \begin{itemize}
+%     \item Vision-based deformable object/tool manipulation using the da Vinci Research Kit (DVRK) and the cisst/SAW Software Environment, Computer Integrated Interventional Systems Laboratory, Johns Hopkins University, Visiting Student. (Jan. 2016 - April. 2017) \\
+%     Supervisor: \textit{Prof. Yunhui Liu, Prof. Peter Kazanzides, Prof. Russell H. Taylor}
+%     \begin{itemize}
+%         \item Improvement of dvrk-ros and cisst-saw software environment in terms of trajectory generator, MatLab wrapper, joint torque control interface, etc;
+%         \item Image-based trajectory tracking control of 4-DoF laparoscopic instruments using dVRK;
+%         \item Vision-based calibration of dual RCM-based robot arms using dVRK;
+%         \item Autonomous Model-Less Deformable Object Manipulation in a Constrained and Disturbed Environment;
+%         \item Vision-Based Autonomous Needle Insertion Using Collaborative Manipulation of Unmodeled Deformable Tissues;
+%     \end{itemize}
+
+%     \item Uterus Manipulator for Hysterectomy, Medical Robotics Laboratory, The Chinese University of Hong Kong, Ph.D. Candidate. (since Aug. 2014) \\
+%     Supervisor: \textit{Prof. Yunhui Liu}
+%     \begin{itemize}
+%         \item Assist with the mechanical structure optimization of the endoscope manipulator (3rd version);
+%         \item Assist with system assembly (3rd version).
+%     \end{itemize}
+
+%     \item Endoscope Manipulator for Sinus Surgery, Medical Robotics Laboratory, The Chinese University of Hong Kong, Ph.D. Candidate. (since Oct. 2013) \\
+%     Supervisor: \textit{Prof. Yunhui Liu}
+%     \begin{itemize}
+%         \item Assist with the mechanical structure optimization of the endoscope manipulator (2nd \& 3rd version);
+%         \item Build the control system (hardware \& software) for the endoscope manipulator (3rd version).
+%     \end{itemize}
+
+%     \item Compliant Safe Robot Joint, Medical Robotics Laboratory, The Chinese University of Hong Kong, Ph.D. Candidate. (Aug. 2013 -- Dec. 2015) \\
+%     Supervisor: \textit{Prof. Yunhui Liu}
+%     \begin{itemize}
+%         \item Mechanical design of the compliant safe robot joint;
+%         \item Structure optimization by analyzing how the key parameters affect the joint's performance (torque threshold, stiffness under compliant state, etc.);
+%         \item Design the torque regulation controller and the trajectory tracking controller;
+%         \item Conduct the collision experiments with human to validate the performance of the joint.
+%     \end{itemize}
+% \end{itemize}
+
+% \subsection*{Undergraduate}
+
+% \begin{itemize}
+%     \item Bio-inspired Autonomous Robotic Fish, Intelligence Control Laboratory, Peking University, RA. (Jun. 2012 -- Jun. 2013) \\
+%     Advisor: \textit{Prof. Guangming Xie}
+%     \begin{itemize}
+%         \item Mechanical design of the new version biomimetic fish robot with SolidWorks;
+%         \item Design the pressure sensor unit;
+%         \item Complete online Particle Swarm Optimization (PSO) and the pectoral fin optimization experiment;
+%         \item Analyze the motion and build the simplified kinetics model of the bio-inspired autonomous robotic fish.
+%     \end{itemize}
+
+%     \item Multifunctional Wall-Climbing Platform, Innovation Internship Center, Beihang University, RA, Key team member. (Sep. 2011 -- Jul.2012) \\
+%     Advisor: \textit{Prof. Guiping Jing}
+%     \begin{itemize}
+%         \item Participate in function design, employ innovative approach of Detachable Accessory to make the platform able to replace human in special and dangerous tasks by assembling it with different specialized devices;
+%         \item Develop detailed design based on series of feasibility verification experiments such as testing the performance of different distributions of the vanes in centrifuge and testing the mechanical strength of different structures of the vacuum chamber frame;
+%         \item Determine the size, weight and size requirements of each part based on WBS method, establish the platform's digital mock-up with SolidWorks, finish the progress of manufacturing, processing and assembling all our own.
+%     \end{itemize}
+
+%     \item Interdisciplinary Modeling Program, School of Mathematics \& System Engineering, Beihang University, RA, Team leader. (Nov. 2009 -- Mar. 2012) \\
+%     Advisor: \textit{Prof. Xiaobing Ma}
+%     \begin{itemize}
+%         \item \textbf{\textit{Optimization Scheme of Classroom Light Placement}}, build physical model of the relationship between placement parameters and feelings of human eyes and identify optimal parameters' value using numeric method (Matlab \& C++);
+%         \item \textit{\textbf{Arrangement of Mining Trucks in Quarry}}, use both Genetic Algorithm and improved Greedy Algorithm to solve the problem of Chinese Postman Problem and compare the performances of the two algorithms;
+%         \item \textbf{\textit{Estimation of Epidemic SARS Spread}}, build the mathematical model by a series of differential equations according to the classical SIR model, estimate the parameters of the model by maximum likelihood estimate method and carry out sensitivity analysis of the model.
+%     \end{itemize}
+% \end{itemize}
+
+% \newpage
+\let\thefootnote\relax\footnote{$^*$ 表示联席第一作者.}
+
+\section*{出版物}
+
+\subsection*{期刊论文}
+\begin{enumerate}
+    % \item F. Alambeigi$^*$, \textbf{Z. Wang}$^*$, Y.-H. Liu, R. H. Taylor, and M. Armand,
+    % A Versatile Data-Driven Framework for Model-Independent Control of Continuum Manipulators Interacting with Obstructed Environments with Unknown Geometry and Stiffness.
+    % \textit{Int. J. Rob. Res., under review}, 2018.
+    % \item \textbf{Z. Wang}$^*$, F. Alambeigi$^*$, Y.-H. Liu, R. H. Taylor, and M. Armand,
+    % Autonomous Model-Less Deformable Object Manipulation in a Constrained and Disturbed Environment.
+    % \textit{Int. J. Rob. Res., under review}, 2017.
+    % \item F. Alambeigi$^*$, \textbf{Z. Wang}$^*$, Y.-H. Liu, R. H. Taylor, and M. Armand,
+    % Toward Semi-Autonomous Laparoscopic Cryoablation of Kidney Tumors Using Collaborative Model-Independent Deformable Tissue Manipulation Technique.
+    % \textit{Ann. Biomed. Eng., under review}, 2017.
+    \item \textbf{Z. Wang}, Z. Liu, Q. Ma, A. Cheng, Y.-H. Liu, S. Kim, A. Deguet, A. Reiter, P. Kazanzides, and R.H. Taylor,
+    Vision-Based Calibration of Dual RCM-Based Robot Arms in Human-Robot Collaborative Minimally Invasive Surgery.
+    \textit{IEEE Rob. Autom. Lett.}, vol. 3, no. 2, pp. 672-679, April 2018.
+    \item \textbf{Z. Wang}, S.C. Lee, F. Zhong, D. Navarro-Alarcon, Y.-H. Liu, A. Deguet, P. Kazanzides and R.H. Taylor,
+    Image Based Trajectory Tracking of 4-DoF Laparoscopic Instruments Using a Rotation Distinguishing Marker.
+    \textit{IEEE Rob. Autom. Lett.}, vol. 2, no. 3, pp. 1586-1592, March 2017.
+    \item D. Navarro-Alarcon, H.M. Yip, \textbf{Z. Wang}, Y.-H. Liu, F. Zhong, T. Zhang and P. Li,
+    Automatic 3D Manipulation of Soft Objects by Robotic Arms with Adaptive Deformation Model.
+    \textit{{IEEE} Trans. Rob.}, vol. 32, no. 2, pp. 429-441, April 2016.
+    \item \textbf{Z. Wang}, H.M. Yip, D. Navarro-Alarcon, P. Li, Y.-H. Liu, D. Sun, H. Wang and T.H. Cheung,
+    Design of a Novel Compliant Safe Robot Joint with Multiple Working States.
+    \textit{{IEEE/ASME} Trans. Mechatron.}, vol21, no. 2, pp. 1193-1198, April 2016.
+\end{enumerate}
+
+\subsection*{会议论文}
+\begin{enumerate}
+	% \item \textbf{Z. Wang}, X. Li, D. Navarro-Alarcon, and Y.-H. Liu,
+	% A Vision-Based Unified Controller for Contacting and Manipulating Deformable Objects.
+	% \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS), under review}, 2018.
+    \item \textbf{Z. Wang}, Z. Liu, Q. Ma, A. Cheng, Y.-H. Liu, S. Kim, A. Deguet, A. Reiter, P. Kazanzides, and R.H. Taylor,
+    Vision-Based Calibration of Dual RCM-Based Robot Arms in Human-Robot Collaborative Minimally Invasive Surgery.
+    \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS), presented}, 2017.
+    \item F. Alambeigi$^*$, \textbf{Z. Wang}$^*$, Y.-H. Liu, M. Armand, and R. H. Taylor,
+    Smart Autonomous Unknown Deformable Object Manipulation Using the da Vinci research Kit: from Soft Tissues to Continuum Robots Manipulation.
+    \textit{Hamlyn Symposium Surgical Robot Challenge, \textbf{Best Innovation Prize}} 2017.
+    \item F. Zhong, D. Navarro-Alarcon, \textbf{Z. Wang}, Y.-H. Liu, T. Zhang, and H.M. Yip,
+    Adaptive 3D Pose Computation of Suturing Needle Using Constraints From Static Monocular Image Feedback.
+    \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS)}, pp. 2153-0866, 2016.
+    \item D. Navarro-Alarcon, \textbf{Z. Wang}, H.M. Yip, Y.-H. Liu, F. Zhong and Tianxue Zhang,
+    Robust Image-based Computation of the 3D Position of Laparoscopic Instruments and its Application to Image-guided Manipulation.
+    \textit{{IEEE} Int. Conf. Robotics and Automation (ICRA)}, pp. 4115-4121, 2016.
+    \item Y. Lu, Y.-H. Liu, \textbf{Z. Wang} and F. Zheng,
+    Lens-free and portable quantitative phase microscope using a dual-pinhole aperture.
+    \textit{{IEEE} Int. Sym. Optomechatronic Technologies (ISOT)}, pp. 04002 p1-p4, 2015.
+    \item H.M. Yip, \textbf{Z. Wang}, D. Navarro-Alarcon, P. Li and Y.-H. Liu,
+    A New Robotic Uterine Positioner for Laparoscopic Hysterectomy with Passive Safety Mechanisms: Design and Experiments.
+    \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS)}, pp. 3188-3194, 2015.
+    \item D. Navarro-Alarcon, H.M. Yip, \textbf{Z. Wang}, Y.-H. Liu, W. Lin and P. Li,
+    Gradient Descent Adaptive Methods to Automatically Position 3-DOF RCM Mechanisms with a Monocular Camera.
+    \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS)}, pp. 5403-5409, 2015.
+    \item W. Lin, D. Navarro-Alarcon, P. Li, \textbf{Z. Wang}, H.M. Yip and Y.-H. Liu,
+    Modeling, Design and Control of an Endoscope Manipulator for FESS.
+    \textit{{IEEE/RSJ} Int. Conf. Intelligent Robots and Systems (IROS)}, pp. 811-816, 2015.
+    \item \textbf{Z. Wang}, P. Li, D. Navarro-Alarcon, H.M. Yip, Y.-H. Liu, W. Lin and L. Li,
+    Design and Control of a Novel Multi-state Compliant Safe Joint for Robotic Surgery.
+    \textit{{IEEE} Int. Conf. Robotics and Automation (ICRA)}, pp. 1023-1028, 2015.
+    \item D. Navarro-Alarcon, \textbf{Z. Wang}, H.M. Yip, Y. Liu, P. Li and W. Lin,
+    A Method to Regulate the Torque of Flexible-joint Manipulators with Velocity Control Inputs.
+    \textit{{IEEE} Int. Conf. Robotics and Biomimetics (ROBIO)}, pp. 2437-2442, 2014.
+    \item H.M. Yip, P. Li, D. Navarro-Alarcon, \textbf{Z. Wang} and Y.-H. Liu,
+    A New Circular-Guided Remote Center of Motion Mechanism for Assistive Surgical Robots.
+    \textit{{IEEE} Int. Conf. Robotics and Biomimetics (ROBIO)}, pp. 217-222, 2014.
+\end{enumerate}
+
+\subsection*{专利}
+\begin{enumerate}
+    \item P. Li, \textbf{Z. Wang}, Y.-H. Liu.
+    Compliant Safe Joint and Manufacturing Method Thereof.
+    U.S. Patent App. 15/089,156, U.S. Patent No. US20160298696, 2016.
+\end{enumerate}
+
+% Footer
+% \bigskip
+% {\small Last updated: \today}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
